@@ -45,20 +45,21 @@ class BrainGenerator:
                  use_specific_stats_for_channel=False,
                  mix_prior_and_random=False,
                  flipping=True,
-                 scaling_bounds=False,
-                 rotation_bounds=10,
+                 scaling_bounds=.2,
+                 rotation_bounds=15,
                  shearing_bounds=.012,
                  translation_bounds=False,
-                 nonlin_std=0,
-                 nonlin_scale=0,
+                 nonlin_std=4.,
+                 nonlin_scale=.04,
                  randomise_res=False,
                  max_res_iso=4.,
                  max_res_aniso=8.,
                  data_res=None,
                  thickness=None,
-                 bias_field_std=0,
-                 bias_scale=0,
+                 bias_field_std=.1,
+                 bias_scale=.025,
                  return_gradients=False):
+        
         """
         This class is wrapper around the labels_to_image_model model. It contains the GPU model that generates images
         from labels maps, and a python generator that supplies the input data for this model.
